@@ -91,10 +91,31 @@
         }
         @media screen and (max-width: 1100px){
             .form{
-                width: 90%!important;
+                width: 80%!important;
             }
         }
         @media screen and (max-width: 900px){
+            .part2{
+                padding-top: 5%;
+            }
+            .form{
+                width: 60%!important;
+                flex-direction: column!important;
+                align-items: center!important;
+            }
+            .input{
+                width: 90%!important;
+                height: 80%!important;
+            }
+            input, button{
+                padding: 0%!important;
+                width: 100%!important;
+                height: 70%!important;
+                margin-top: 2%!important;
+                margin-bottom: 2%!important;
+            }
+        }
+        @media screen and (max-width: 700px){
             .part2{
                 padding-top: 5%;
             }
@@ -104,11 +125,13 @@
                 align-items: center!important;
             }
             .input{
-                height: 80%!important;
                 width: 90%!important;
+                height: 80%!important;
             }
-            input{
+            input, button{
                 padding: 0%!important;
+                width: 100%!important;
+                height: 70%!important;
             }
         }
         .form{
@@ -118,10 +141,10 @@
             flex-direction: row;
             justify-content: center;
         }
-        input{
+        input, button{
         border-radius: 15px;
         font-size: 2rem;
-        line-height: 2rem;
+        line-height: 2.5rem;
         color: black;
         background-color: #C0B9B2;
         font-weight: normal;
@@ -141,7 +164,7 @@
         }
         #input1{
             height: 100%;
-            width: 30%;
+            width: 40%;
         }
         #input2{
             height: 100%;
@@ -154,6 +177,9 @@
         }
         #input3:hover{
             transform: scale(1.15);
+        }
+        button:disabled{
+            background-color: #575350;
         }
     </style>
 </head>
@@ -223,7 +249,7 @@
                     <input id="name" name="Time" type="datetime-local" placeholder="Choose date" autocomplete="off" required>
                 </div>
                 <div id="input3" class="input">
-                    <input id="button" type="submit">
+                    <button id="button" type="submit" placeholder="Submit">Submit</button>
                 </div>
         </div>
     </form>
