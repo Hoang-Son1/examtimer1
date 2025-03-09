@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="clock2.png">
+    <title>Exam timers</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Modak&display=swap');        
+        html, body{
+            background-color: #191919;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .part1{
+            min-height: 100%; 
+            height: fit-content;
+            width: 100%; 
+            display: flex; 
+            flex-direction: row;
+            flex-wrap: wrap; 
+            justify-content: center; 
+            align-items: center;
+        }
+        @media screen and (max-width: 1100px){
+            .timer{
+                flex: 1;
+                font-size: 2.5rem;
+            }
+        }
+        .timer{
+            width: 20%;
+            min-height: 35%; 
+            margin: 1.5% 2.5% 1.5% 2.5%;
+            padding-bottom: 2%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+            min-width: 250px;
+            background-color: #6E6E6E; 
+            font-family: "Cherry Bomb One", system-ui;
+            font-weight: 100;
+            font-style: normal; 
+            font-size: 2.5rem;
+            color: white;
+            text-align: center;
+            -webkit-box-shadow: 5px 5px 15px 5px #000000;
+            box-shadow: 5px 5px 15px 10px #000000;
+            transition: transform 0.5s;
+        }
+        .timer:hover{
+            transform: scale(1.15);
+        }
+        .hsc{
+            background-color: red;
+        }
+        p{
+            margin: 1rem;
+        }
+        a{
+            color: rgb(62, 166, 255);
+        }
+        .subject{
+            height: 40%;
+        }
+        .date{
+            height: 30%;
+        }
+        .time{
+            height: 20%;
+        }
+        .study{
+            height: 10%;
+        }
+        .part2{
+            padding-top: 3%;
+            height: 20%; 
+            width: 100%; 
+        }
+        form{
+            height: 100%;
+            width: 100%;
+            display: flex; 
+            flex-direction: row; 
+            flex-wrap: wrap; 
+            justify-content: center;
+            align-items: center;
+        }
+        @media screen and (max-width: 1100px){
+            .form{
+                width: 90%!important;
+            }
+        }
+        @media screen and (max-width: 900px){
+            .part2{
+                padding-top: 5%;
+            }
+            .form{
+                width: 95%!important;
+                flex-direction: column!important;
+                align-items: center!important;
+            }
+            .input{
+                height: 80%!important;
+                width: 90%!important;
+            }
+            input{
+                padding: 0%!important;
+            }
+        }
+        .form{
+            height: 100%;
+            width: 60%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        input{
+        border-radius: 15px;
+        font-size: 2rem;
+        line-height: 2rem;
+        color: black;
+        background-color: #C0B9B2;
+        font-weight: normal;
+        text-align: center;
+        border: none;
+        width: 100%;
+        height: 50%;
+        padding: 0% 5% 0% 5%;
+        -webkit-box-shadow: 5px 5px 15px 5px #000000;
+        box-shadow: 5px 5px 15px 10px #000000;
+        }
+        ::placeholder{
+            color: black;
+        }
+        .input{
+            padding: 0% 5% 0% 5%;
+        }
+        #input1{
+            height: 100%;
+            width: 30%;
+        }
+        #input2{
+            height: 100%;
+            width: 40%;
+        }
+        #input3{
+            height: 100%;
+            width: 30%;
+            transition: transform 0.5s;
+        }
+        #input3:hover{
+            transform: scale(1.15);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="part1">
+        <div class="timer">
+            <div class="subject"><p>Business Studies</p></div>
+            <div class="date"><p>24/3/ 2025</p></div>
+            <div class="time" id="timer1" style="margin-bottom: 2%;"></div>
+            <div class="study"><a href="https://drive.google.com/drive/folders/1_ng8wTWIdAME_Skf4_A_q5xea9lfM42F">Study</a></div>
+        </div>
+        <div class="timer">
+            <div class="subject"><p>Math Advanced</p></div>
+            <div class="date"><p>27/3/ 2025</p></div>
+            <div class="time" id="timer2"></div>
+            <div class="study"><a href="https://drive.google.com/drive/folders/1XdESm6ZRb2qWdb94zdQ0O1zCkUbAtIlm">Study</a></div>
+        </div>
+        <div class="timer">
+            <div class="subject"><p>Math extension</p></div>
+            <div class="date"><p>3/4/ 2025</p></div>
+            <div class="time" id="timer3"></div>
+            <div class="study"><a href="https://drive.google.com/drive/folders/1IFr-1KwNL-flvHo6KnqyQVIulwWZx41z">Study</a></div>
+        </div>
+        <div class="timer">
+            <div class="subject"><p>English</p></div>
+            <div class="date"><p>30/4/ 2025</p></div>
+            <div class="time" id="timer4"></div>
+            <div class="study"><a href="https://drive.google.com/drive/folders/1JXLZx7dDWC4HFgD0vVjXaMPC9ht4ZI0N">Study</a></div>
+        </div>
+        <div class="timer">
+            <div class="subject"><p>Enterprise Computing</p></div>
+            <div class="date"><p>2/5/ 2025</p></div>
+            <div class="time" id="timer5"></div>
+            <div class="study"><a href="https://drive.google.com/drive/folders/1pS3iWdTMNQ0IaqhuBvFg4D2L0fAz1Da6">Study</a></div>
+        </div>
+        <div class="timer">
+            <div class="subject"><p>Visual Design</p></div>
+            <div class="date"><p>??/4/ 2025</p></div>
+            <div class="time" id="timer6"></div>
+            <div class="study"><a href="https://drive.google.com/drive/folders/1Oj25t_sbJboydKWkAPImjCXExKUfVgDC">Study</a></div>
+        </div>
+        <div class="timer">
+            <div class="subject"><p>Physics</p></div>
+            <div class="date"><p>??/??/ 2025</p></div>
+            <div class="time" id="timer7"></div>
+            <div class="study"><a href="https://drive.google.com/drive/folders/1gqFdo7OzuSp2bupEhz8HUfTJ1IJz8b5P">Study</a></div>
+        </div>
+        <div class="timer hsc">
+            <div class="subject"><p>HSC</p></div>
+            <div class="date"><p>15/10/ 2026</p></div>
+            <div class="time" id="timer8"></div>
+            <div class="study"><a href="https://educationstandards.nsw.edu.au/wps/portal/nesa/resource-finder/hsc-exam-papers/2024">Study</a></div>
+        </div>
+    </div>
+    <div class="part2">
+        <form
+        id="form"
+        method="POST" 
+        action="https://script.google.com/macros/s/AKfycbx5uA5wt2CIg2njNiFlHexEu2KSi5dOizys2l2ZOwsjCWltLAtr2FpkktqFQ9IkLQ7N/exec"
+        >
+        <div class="form">
+                <div id="input1" class="input">
+                    <input id="email" name="Task" type="text" placeholder="Task" autocomplete="off" required>
+                </div>
+                <div id="input2" class="input">
+                    <input id="name" name="Time" type="datetime-local" placeholder="Choose date" autocomplete="off" required>
+                </div>
+                <div id="input3" class="input">
+                    <input id="button" type="submit">
+                </div>
+        </div>
+    </form>
+    </div>
+
+    <script>
+        window.addEventListener("load", function() {
+        const form = document.getElementById('form');
+        form.addEventListener("submit", function(e) {
+            document.getElementById("button").disabled = true;
+            e.preventDefault();
+            const data = new FormData(form);
+            const action = e.target.action;
+            fetch(action, {
+            method: 'POST',
+            body: data,
+            })
+            .then(() => {       
+            document.getElementById("button").disabled = false;   
+            document.getElementById("email").value = '';
+            document.getElementById("name").value = '';
+            alert("Success!");
+         
+     
+            })
+        });
+        });
+
+        // Function to start both timers
+        function startTimers() {
+            let date1 = new Date('March 24, 2025 00:00:00');  // BST
+            let date2 = new Date('March 27, 2025 00:00:00');  // MTH ADV
+            let date3 = new Date('April 3, 2025 00:00:00');  // MTH EXT
+            let date4 = new Date('April 30, 2025 00:00:00');  // ENG
+            let date5 = new Date('May 2, 2025 00:00:00');  // ENC
+            let date6 = new Date('March 15, 2025 00:00:00');  // VD 
+            let date7 = new Date('October 15, 2026 00:00:00');  // PHYS 
+            let date8 = new Date('October 15, 2026 00:00:00');  // HSC
+
+            // Call functions to start each timer
+            createTimer(date1, 'timer1');
+            createTimer(date2, 'timer2');
+            createTimer(date3, 'timer3');
+            createTimer(date4, 'timer4');
+            createTimer(date5, 'timer5');
+            createTimer(date6, 'timer6');
+            createTimer(date7, 'timer7');
+            createTimer(date8, 'timer8');
+        }
+
+        // Function to create a timer
+        function createTimer(targetDate, elementId) {
+            setInterval(function() {
+                let currentTime = new Date();
+                let timeLeft = targetDate - currentTime;
+
+                if (timeLeft <= 0) {
+                    document.getElementById(elementId).innerHTML = "Time's up!";
+                } else {
+                    let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                    let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                    let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                    document.getElementById(elementId).innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                }
+            }, 1000);
+        }
+
+        // Automatically start timers when the page loads
+        window.onload = startTimers;
+
+        function submitted(){
+            document.getElementById("submit").disabled = true;
+        }
+    </script>
+
+</body>
+</html>
